@@ -65,13 +65,13 @@ body{
     object-fit: cover;
 }
 
-.arielle-card .avatar {
+/*.arielle-card .avatar {
     margin: 0 auto;
     width: 50%;
     height: 50%;
     border-radius: 60%;
     object-fit: cover;
-}
+}*/
 
 .email{
     color: #6d2e46;
