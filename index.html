@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Development Front-End Technical Assessment</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--array-->
+    <div class="container">
+    <div class="data_display"></div>
+    <div class="loadMoreSection">
+      <button id="loadMore">Load More</button>
+      <p id="noData" style="display: none;">No data.</p>
+    </div>
+  </div>
+    <!--javascript-->
+<script>
+const data = [
+  {
+    id: 1,
+    section: "BS Computer Science 2-B",
+    email: "aedraventura@addu.edu.ph",
+    first_name: "Arielle",
+    last_name: "Aventura",
+    avatar: "images/aventuraImage.jpg",
+  },
+  {
+    id: 2,
+    email: "janet.weaver@reqres.in",
+    section:"",
+    first_name: "Janet",
+    last_name: "Weaver",
+    avatar: "https://reqres.in/img/faces/2-image.jpg",
+  },
+  {
+    id: 3,
+    section:"",
+    email: "emma.wong@reqres.in",
+    first_name: "Emma",
+    last_name: "Wong",
+    avatar: "https://reqres.in/img/faces/3-image.jpg",
+  },
+  {
+    id: 4,
+    section:"",
+    email: "eve.holt@reqres.in",
+    first_name: "Eve",
+    last_name: "Holt",
+    avatar: "https://reqres.in/img/faces/4-image.jpg",
+  },
+  {
+    id: 5,
+    section:"",
+    email: "charles.morris@reqres.in",
+    first_name: "Charles",
+    last_name: "Morris",
+    avatar: "https://reqres.in/img/faces/5-image.jpg",
+  },
+  {
+    id: 6,
+    section:"",
+    email: "tracey.ramos@reqres.in",
+    first_name: "Tracey",
+    last_name: "Ramos",
+    avatar: "https://reqres.in/img/faces/6-image.jpg",
+  },
+  {
+    id: 7,
+    section:"",
+    email: "michael.lawson@reqres.in",
+    first_name: "Michael",
+    last_name: "Lawson",
+    avatar: "https://reqres.in/img/faces/7-image.jpg",
+  },
+  {
+    id: 8,
+    section:"",
+    email: "lindsay.ferguson@reqres.in",
+    first_name: "Lindsay",
+    last_name: "Ferguson",
+    avatar: "https://reqres.in/img/faces/8-image.jpg",
+  },
+  {
+    id: 9,
+    section:"",
+    email: "tobias.funke@reqres.in",
+    first_name: "Tobias",
+    last_name: "Funke",
+    avatar: "https://reqres.in/img/faces/9-image.jpg",
+  },
+  {
+    id: 10,
+    section:"",
+    email: "byron.fields@reqres.in",
+    first_name: "Byron",
+    last_name: "Fields",
+    avatar: "https://reqres.in/img/faces/10-image.jpg",
+  },
+  {
+    id: 11,
+    section:"",
+    email: "george.edwards@reqres.in",
+    first_name: "George",
+    last_name: "Edwards",
+    avatar: "https://reqres.in/img/faces/11-image.jpg",
+  },
+  {
+    id: 12,
+    section:"",
+    email: "rachel.howell@reqres.in",
+    first_name: "Rachel",
+    last_name: "Howell",
+    avatar: "https://reqres.in/img/faces/12-image.jpg",
+  },
+];
+
+const container = document.querySelector('.data_display');
+const loadMore = document.getElementById('loadMore');
+const noData = document.getElementById('noData');
+
+    
+let index = 0;
+const cardsRow = 3;
+
+const displayCards = ()=>{
+
+    /*container.innerHTML = '';*/
+    /*display for each data in the array*/
+    /*data.forEach(postData =>{*/
+
+    const indexEnd = Math.min(index + cardsRow, data.length);
+
+    for (let i = index; i < index + cardsRow && i < data.length; i++) {
+        const postData = data[i];
+        const postElement = document.createElement('div');
+        postElement.classList.add('card');
+
+        if(postData.id === 1) {
+            postElement.classList.add('arielle-card');
+        }
+
+
+        postElement.innerHTML=`
+        <img class="avatar" src="${postData.avatar}"></img>
+        <p class="id"><b>#</b>${postData.id}</p>
+        <p class="section">${postData.section}</p>
+        <div class="name">
+            <h3 class="first_name">${postData.first_name}</h3>
+            <h3 class="last_name">${postData.last_name}</h3>
+        </div>
+        <p class="email"><a href="mailto:${postData.email}">${postData.email}</a></p>
+        `;
+        container.appendChild(postElement);
+      
+    }
+
+    index += cardsRow;
+
+    if (index >= data.length){
+      loadMore.style.display = 'none';
+      noData.style.display= 'block';
+    }
+    else{
+      loadMore.style.display = 'block';
+      noData.style.display= 'none';
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  displayCards();
+  loadMore.addEventListener('click', displayCards);
+});
+
+</script>
+</body>
+</html>
+
