@@ -17,8 +17,7 @@ body{
     max-width: 1000px;
     margin: 4rem auto;
     animation: fade 1s ease-out forwards;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     grid-template-columns:repeat(3, 1fr);
     gap: 30px;
 }
@@ -77,11 +76,24 @@ body{
     text-align: center;
 }
 
-@media (min-width: 460px){
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+@media (max-width: 599px) {
+    .data_display {
+        grid-template-columns: 1fr; /* 1 column on small screens */
     }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+    .data_display {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (min-width: 900px) {
+    .data_display {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    }
+}
+
 @keyframes fade {
     0%{
         opacity: 0;
