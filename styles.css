@@ -95,7 +95,6 @@ body{
 }
 
 #noData{
-    /*text-align: center;*/
     margin-top: 20px;
     background-color:#ece2d0;
     padding: 10px 30px;
@@ -103,7 +102,8 @@ body{
     margin-bottom: 20px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);  
 }
-@media (min-width: 460px) {
+
+@media (max-width: 460px) {
     .data_display {
         grid-template-columns: 1fr; 
     }
