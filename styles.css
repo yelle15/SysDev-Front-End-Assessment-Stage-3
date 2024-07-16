@@ -17,7 +17,8 @@ body{
     max-width: 1000px;
     margin: 4rem auto;
     animation: fade 1s ease-out forwards;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     grid-template-columns:repeat(3, 1fr);
     gap: 30px;
 }
@@ -75,6 +76,7 @@ body{
     color: #6d2e46;
     text-align: center;
 }
+
 .loadMoreSection{
     display: flex;
     justify-content: center;
@@ -103,13 +105,13 @@ body{
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);  
 }
 
-@media (max-width: 460px) {
+@media (max-width: 500px) {
     .data_display {
         grid-template-columns: 1fr; 
     }
 }
 
-@media (min-width: 600px) and (max-width: 899px) {
+@media (min-width: 501px) and (max-width: 899px) {
     .data_display {
         grid-template-columns: repeat(2, 1fr); 
     }
@@ -117,7 +119,7 @@ body{
 
 @media (min-width: 900px) {
     .data_display {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); 
     }
 }
 
