@@ -60,7 +60,6 @@ body{
 .avatar{
     max-width: 100%;
     height: auto;
-    aspect-ratio: 1;
     border-radius: 60%;
     object-fit: cover;
 }
