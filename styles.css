@@ -8,6 +8,7 @@
 body{
     background-color: #d5b9b2;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -18,7 +19,7 @@ body{
     margin: 4rem auto;
     animation: fade 1s ease-out forwards;
     display: grid;
-    grid-template-columns:repeat(3, 1fr);
+    /*grid-template-columns:repeat(3, 1fr);*/
     gap: 30px;
 }
 
