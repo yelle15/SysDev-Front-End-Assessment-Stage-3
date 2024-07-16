@@ -105,13 +105,13 @@ body{
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);  
 }
 
-@media (max-width: 500px) {
+@media (max-width: 599px) {
     .data_display {
         grid-template-columns: 1fr; 
     }
 }
 
-@media (min-width: 501px) and (max-width: 899px) {
+@media (min-width: 600px) and (max-width: 899px) {
     .data_display {
         grid-template-columns: repeat(2, 1fr); 
     }
